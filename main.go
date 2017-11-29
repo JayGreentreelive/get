@@ -298,69 +298,6 @@ func commands() {
 
 }
 
-// NewMainWindow - Created the Main Window for the Desktop Application.
-// func NewMainWindow() {
-// 	seperate := ui.NewHorizontalSeparator()
-// 	title := ui.NewLabel("Choose the image you wish to download.")
-// 	protools := ui.NewButton("Protools")
-// 	propresenter := ui.NewButton("Propresenter")
-// 	lighting := ui.NewButton("Lighting")
-// 	usermac := ui.NewButton("User Mac OSX")
-// 	checkin := ui.NewButton("Check-In")
-
-// 	downloading := ui.NewLabel("Downloading... Please Wait.")
-
-// 	mbox := ui.NewVerticalBox()
-
-// 	mbox.SetPadded(true)
-// 	mbox.Append(title, false)
-// 	mbox.Append(seperate, false)
-// 	mbox.Append(protools, false)
-// 	mbox.Append(propresenter, false)
-// 	mbox.Append(lighting, false)
-// 	mbox.Append(usermac, false)
-// 	mbox.Append(checkin, false)
-
-// 	window := ui.NewWindow("Life.Church IT", 800, 800, true)
-// 	window.Show()
-// 	window.SetMargined(true)
-// 	window.SetChild(mbox)
-
-// 	protools.OnClicked(func(*ui.Button) {
-// 		mbox.Append(downloading, false)
-// 		downloadScript(ProtoolsFN, ProtoolsURL)
-// 	})
-// 	propresenter.OnClicked(func(*ui.Button) {
-// 		mbox.Append(downloading, false)
-// 		downloadScript(PropresenterFN, PropresenterURL)
-// 	})
-// 	lighting.OnClicked(func(*ui.Button) {
-// 		mbox.Append(downloading, false)
-// 		downloadScript(LightingFN, LightingURL)
-// 	})
-// 	checkin.OnClicked(func(*ui.Button) {
-// 		mbox.Append(downloading, false)
-// 		downloadScript(CheckinFN, CheckinURL)
-// 	})
-// 	usermac.OnClicked(func(*ui.Button) {
-// 		mbox.Append(downloading, false)
-// 		downloadScript(UsermacFN, UsermacURL)
-// 	})
-
-// 	window.OnClosing(func(*ui.Window) bool {
-// 		ui.Quit()
-// 		return true
-// 	})
-// 	window.Show()
-// }
-
 func main() {
 	commands()
-
-	// err := ui.Main(func() { // Start
-	// 	NewMainWindow()
-	// })
-	// if err != nil {
-	// 	panic(fmt.Errorf("error initializing UI library: %v", err))
-	// }
 }
