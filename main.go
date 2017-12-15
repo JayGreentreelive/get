@@ -15,6 +15,8 @@ import (
 
 var get Get
 
+// Get is the struct that stores the json from Images.json - this file is located in dropbox where you can update
+// the contents of to download different files.
 type Get struct {
 	Images struct {
 		Lighting struct {
