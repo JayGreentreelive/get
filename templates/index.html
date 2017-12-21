@@ -1,0 +1,35 @@
+{{template "header"}}
+
+<body>
+<div>
+    <div>
+
+            <div class="jumbotron">
+                    <h1 class="display-3">Welcome!</h1>
+                    <p class="lead">All Documentation for configuring computers can be found at this link <a class="link" href="">Configuration Documentation</a></p>
+                    <hr class="my-4">
+                    <p>Select the Image that you would like to download for the machine that you are configuring. </p>
+                    <p class="lead">
+                    <form method="POST">
+                        <fieldset>
+                        <div class="form-group">
+                        <label>Images</label>
+                        <select class="form-control">
+                                <option value="checkin">Checkin</option>
+                                <option value="protools">Protools</option>
+                                <option value="propresenter">Propresenter</option>
+                                <option value="usermac">Usermac</option>
+                                <option value="smaart">Smaart</option>
+                                <option value="lighting">Lighting</option>
+                        </select>
+                        </div>
+                        <button type="submit" class="btn btn-dark btn-lg">Submit</button>
+                        </fieldset>
+                    </form>
+                    </p>
+                  </div>
+
+    </div>
+</div>
+
+{{template "footer"}}
