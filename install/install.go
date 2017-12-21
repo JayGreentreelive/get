@@ -72,16 +72,7 @@ func downloadScript(y1 []string, y2 []string) {
 	log.Printf("Downloaded all files in %s", elapsed)
 }
 
-func Install(v string) {
-	// var image int
-	// fmt.Println("Options:\n \t1.lighting \n \t2.checkin \n \t3.protools \n \t4.propresenter \n \t5.usermac \n \t6.Smaart")
-	// fmt.Print("Enter the image number that you would like to download: ")
-	// _, err := fmt.Scan(&image)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-
-	// json data
+func JsonImages() {
 	url := "https://www.dropbox.com/s/bngfnoxe5kwv8lc/images.json?dl=1"
 
 	dst, err := os.Create("images.json")
@@ -106,10 +97,13 @@ func Install(v string) {
 	}
 
 	json.Unmarshal(body, &g)
+}
 
+func Install(v string) {
 	switch v {
-	case "lighting":
+	case "Lighting":
 		fmt.Println("Downloading Lighting Files...")
+		JsonImages()
 		downloadScript(g.Images.Lighting.Name, g.Images.Lighting.URL)
 		openDropbox := exec.Command("hdiutil", "attach", "Dropbox.dmg")
 		openDropbox.Run()
@@ -123,8 +117,9 @@ func Install(v string) {
 		openKaseya := exec.Command("unzip", "-a", "Kaseya.zip")
 		openKaseya.Run()
 
-	case "checkin":
+	case "Checkin":
 		fmt.Println("Downloading Check-In Files...")
+		JsonImages()
 		downloadScript(g.Images.Checkin.Name, g.Images.Checkin.URL)
 		openDropbox := exec.Command("Dropbox.exe")
 		openDropbox.Run()
@@ -134,8 +129,9 @@ func Install(v string) {
 
 		openKaseya := exec.Command("Kaseya.exe")
 		openKaseya.Run()
-	case "protools":
+	case "Protools":
 		fmt.Println("Downloading Protools Files...")
+		JsonImages()
 		downloadScript(g.Images.Protools.Name, g.Images.Protools.URL)
 		openProtools := exec.Command("open", "Protools.dmg")
 		openProtools.Run()
@@ -163,8 +159,9 @@ func Install(v string) {
 
 		openKaseya := exec.Command("unzip", "-a", "Kaseya.zip")
 		openKaseya.Run()
-	case "propresenter":
+	case "Propresenter":
 		fmt.Println("Downloading Propresenter Files...")
+		JsonImages()
 		downloadScript(g.Images.Propresenter.Name, g.Images.Propresenter.URL)
 		openPropresenter := exec.Command("open", "Propresenter.dmg")
 		openPropresenter.Run()
@@ -186,8 +183,9 @@ func Install(v string) {
 
 		openKaseya := exec.Command("unzip", "-a", "Kaseya.zip")
 		openKaseya.Run()
-	case "usermac":
+	case "Usermac":
 		fmt.Println("Downloading User Mac Files...")
+		JsonImages()
 		downloadScript(g.Images.Usermac.Name, g.Images.Usermac.URL)
 		openOffice := exec.Command("open", "Office.pkg")
 		openOffice.Run()
@@ -223,6 +221,7 @@ func Install(v string) {
 		openKaseya.Run()
 	case "Smaart":
 		fmt.Println("Downloading Smaart Files...")
+		JsonImages()
 		downloadScript(g.Images.Smaart.Name, g.Images.Smaart.URL)
 		openDropbox := exec.Command("open", "Dropbox.dmg")
 		openDropbox.Run()
