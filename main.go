@@ -11,7 +11,7 @@ import (
 var tpl *template.Template
 
 func init() {
-	tpl = template.Must(template.ParseFiles("index.html"))
+	tpl = template.Must(template.ParseGlob("templates/*"))
 }
 
 func main() {
