@@ -1,15 +1,9 @@
-# Example explains how to setup a basicauth proxy to a webserver
+localhost
 
-infratools.unity.com
-
-# If you want to use more than one user, just append more rows with the next user
-# basicauth / username1 password1
-# basicauth / username2 password2
-
-basicauth / username password
-
-# Proxy to localhost port 8080
-# If multiple backends are used, just specify them separated by space
-# proxy / localhost:8080 localhost:8081 192.168.99.100:8083
-
-proxy / localhost:8080
+push
+browse
+websocket /echo cat
+ext    .html
+log    /var/log/access.log
+proxy  /api 127.0.0.1:7005
+header /api Access-Control-Allow-Origin *
