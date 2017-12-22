@@ -11,7 +11,7 @@ import (
 var tpl *template.Template
 
 func init() {
-	tpl = template.Must(template.ParseGlob("templates/*"))
+	tpl = template.Must(template.ParseFiles("index.html"))
 }
 
 func main() {
@@ -23,8 +23,8 @@ func index(w http.ResponseWriter, req *http.Request) {
 	err := tpl.ExecuteTemplate(w, "index.html", nil)
 	HandleError(w, err)
 
-	v := req.FormValue("Images")
-	install.Install(v)
+	i := req.FormValue("i")
+	install.Install(i)
 
 }
 
